@@ -1,0 +1,93 @@
+<div layout="column" layout-align="space-around">
+    <md-content layout>
+        <div layout="row" flex="100" layout-margin layout padding>
+            <div flex="25" flex-xs="0"></div>
+            <div flex="50" flex-xs="100" layout="column">
+                <div ng-cloak>
+                    <md-content>
+                        <md-tabs md-dynamic-height md-border-bottom>
+                            <md-tab label="ENTRAR">
+                                <md-content class="md-padding">
+                                    <h3 class="md-display-1">ENTRAR</h3>
+                                    <div layout="column" ng-controller="Login as login">
+                                        <md-input-container>
+                                            <label>E-mail</label>
+                                            <input type="email" ng-model='login.user.email'/>
+                                        </md-input-container>
+                                        <md-input-container>
+                                            <label>Senha</label>
+                                            <input type="password" ng-model='login.user.password'/>
+                                        </md-input-container>
+                                        <div layout layout-align="end" layout-padding>
+                                            <md-button class="md-raised" ng-click="login.login()">LOGIN</md-button>
+                                        </div>
+                                    </div>
+                                </md-content>
+                            </md-tab>
+                            <md-tab label="CADASTRAR">
+                                <md-content class="md-padding">
+                                    <h3 class="md-display-1">CADASTRAR</h3>
+                                    <div layout="column" ng-controller="User as user">
+                                        <md-input-container>
+                                            <label>Nome</label>
+                                            <input type="text" ng-model='user.new.name'/>
+                                        </md-input-container>
+                                        <md-input-container>
+                                            <label>E-mail</label>
+                                            <input type="email" ng-model='user.new.email'/>
+                                        </md-input-container>
+                                        <md-input-container>
+                                            <label>Senha</label>
+                                            <input type="password" ng-model='user.new.password'/>
+                                        </md-input-container>
+                                        <md-input-container>
+                                            <label>Confirmar senha</label>
+                                            <input type="password" ng-model='user.new.password_confirmation'/>
+                                        </md-input-container>
+                                        <md-input-container>
+                                            <label>Cep</label>
+                                            <input type="text" ng-blur="user.findAddress()"
+                                                   ng-model='user.new.zip_code'/>
+                                        </md-input-container>
+                                        <div layout="row">
+                                            <md-input-container flex="50">
+                                                <label>Estado</label>
+                                                <input type="text" ng-model='user.new.state'/>
+                                            </md-input-container>
+
+                                            <md-input-container flex="50">
+                                                <label>Cidade</label>
+                                                <input type="text" ng-model='user.new.city'/>
+                                            </md-input-container>
+                                        </div>
+                                        <md-input-container>
+                                            <label>Bairro</label>
+                                            <input type="text" ng-model='user.new.neighborhood'/>
+                                        </md-input-container>
+                                        <div layout="row">
+                                            <md-input-container flex="90">
+                                                <label>Address</label>
+                                                <input type="text" ng-model='user.new.address'/>
+                                            </md-input-container>
+                                            <md-input-container flex="10">
+                                                <label>Número</label>
+                                                <input type="text" ng-model='user.new.number'/>
+                                            </md-input-container>
+                                        </div>
+                                        <div layout layout-align="end" layout-padding>
+                                            <md-button class="md-raised" ng-click="user.register(user.new)">CADASTRAR
+                                            </md-button>
+                                        </div>
+                                        <!--{:neighborhood=>"Jardim Santo André", :zipcode=>"18077301", :city=>"Sorocaba", :complement=>"", :address=>"Rua José Lamberti", :state=>"SP"})-->
+
+                                    </div>
+                                </md-content>
+                            </md-tab>
+                        </md-tabs>
+                    </md-content>
+                </div>
+            </div>
+        </div>
+    </md-content>
+</div>
+
